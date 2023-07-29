@@ -33,7 +33,7 @@ while True:
     imgCurrent = cv2.imread(pathFullImage)
     imgCurrent = cv2.resize(imgCurrent, (1080, 620))
 
-    img = detector.handsFinder(img)
+    hands, img = detector.handsFinder(img)
     lm_list = detector.positionFinder(img)
     # print(lm_list)
     if len(lm_list) != 0:
