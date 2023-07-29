@@ -84,7 +84,7 @@ while True:
         # Check if the center of the hand is above the gesture threshold
         center_y = (y_min + y_max) // 2
         if center_y <= gesture_threshold:
-            indexFinger = lmlist[8],[0], lmlist[8][1]
+            indexFinger = lmlist[8][0], lmlist[8][1]
             #gesture no1 = left
             if fingers == [1,0,0,0,0]:
                 print("left")
@@ -99,7 +99,7 @@ while True:
                     time.sleep(buffer_time)
 
             #gesture 3 show Pointer
-            if fingers == [0, 1, 0, 0, 0]:
+            if fingers == [0, 1, 1, 0, 0]:
                 cv2.circle(imgCurrent, indexFinger, 12,(0,0,255),cv2.FILLED)
                     # time.sleep(buffer_time)
 
