@@ -23,7 +23,7 @@ FONT_THICKNESS = 1
 HANDEDNESS_TEXT_COLOR = (88, 205, 54)  # vibrant green
 gesture_threshold = 130
 tipIds = [4, 8, 12, 16, 20]
-buffer_time = 0.8
+
 # hand detector
 detector = handTracker()
 
@@ -89,14 +89,16 @@ while True:
             if fingers == [1,0,0,0,0]:
                 print("left")
                 if imgNumber > 0:
-                    imgNumber-=1
-                    time.sleep(buffer_time)
+                    time.sleep(1)
+                    imgNumber -= 1
+
             # gesture no2 = Right
             if fingers == [0, 0, 0, 0, 1]:
                 print("Right")
                 if imgNumber < len(pathImages)-1:
-                    imgNumber+=1
-                    time.sleep(buffer_time)
+                    time.sleep(1)
+                    imgNumber += 1
+
 
             #gesture 3 show Pointer
             if fingers == [0, 1, 1, 0, 0]:
